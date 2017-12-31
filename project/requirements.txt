@@ -1,0 +1,6 @@
+oauth2
+beautifulsoup4
+html5lib
+psycopg2
+tabulate
+Flask==0.10.1
