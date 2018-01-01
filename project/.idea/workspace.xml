@@ -3,8 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="59657c1d-199c-4d6b-a5df-6b5a6f40fa32" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/menu.py" afterPath="$PROJECT_DIR$/menu.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/user.py" afterPath="$PROJECT_DIR$/user.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -204,6 +202,7 @@
   <component name="Git.Settings">
     <option name="PREVIOUS_COMMIT_AUTHORS">
       <list>
+        <option value="JustChillin21" />
         <option value="show" />
       </list>
     </option>
@@ -558,7 +557,14 @@
       <option name="project" value="LOCAL" />
       <updated>1514731472693</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="+Modified the search module to correct for searching by email, or id&#10;+Modified  Menu.display_table_columns() to add a show=0 variable. &#10;show=0 (hide)&#10;show=1 (show column headers)&#10;This initializes the table before hand to avoid an error that I was getting after removing the column list&#10;Clean up some code and remove some commented code.">
+      <created>1514841598281</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1514841598281</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TodoView">
