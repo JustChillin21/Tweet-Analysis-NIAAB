@@ -7,7 +7,7 @@ import oauth2
 
 from twitter_utils import consumer
 
-##What happens if we stop after teh pin. right now it errors our...
+##What happens if we stop after the pin. right now it errors our...
 cont = False
 
 
@@ -71,15 +71,12 @@ class User:
         with CursorFromConnectionFromPool() as cursor:
             query = """INSERT INTO {} (email, screen_name, first_name, middle_name, last_name,  oauth_token, oauth_token_secret) VALUES (%s, %s, %s, %s, %s, %s, %s)""".format(self.table_name)
             values = (self.email, self.screen_name,self.first_name, self.middle_name, self.last_name, self.oauth_token, self.oauth_token_secret)
-            # cursor.execute('INSERT INTO users(email, first_name, last_name) VALUES(%s, %s, %s)',
-            #                (self.email, self.first_name, self.last_name))
             cursor.execute(query,values)
             print("Record Saved: {}".format(self.email))
 
     @classmethod
     def delete_from_db(cls, email):
         with CursorFromConnectionFromPool() as cursor:
-            #cursor.execute('DELETE FROM users WHERE email=%s',(email,))
             query = """
             DELETE FROM {} WHERE email=%s
             """.format(cls.table_name)
@@ -88,7 +85,8 @@ class User:
             print("Record Deleted: {}".format(email))
 
     @classmethod
-    def view_column_names(cls):##Returns Column Headers from table
+    def view_column_names(cls, table_name='new_users'):##Returns Column Headers from table
+        cls.table_name=table_name
         with CursorFromConnectionFromPool() as cursor:
             query = """
             SELECT 
@@ -103,7 +101,6 @@ class User:
             col_names = []
             for header in cursor.description:
                 col_names.append(header[0])
-        # return "Columns: {} {} {} {} {} ".format(col_names[1],col_names[2],col_names[3],col_names[4],col_names[5])
         return col_names
 
     @classmethod #Modify a record in the Database
@@ -164,19 +161,8 @@ class User:
             """.format(cls.table_name)
             cursor.execute(query)#, values)
             rows = cursor.fetchall()
-            # row_format = "{} {:<30} {:<30} {:<30} {:<45} {:<45} {:<30}"
-            # print(row_format.format("", *cls.view_column_names()))
-            # for row in rows:
             print(tabulate(rows, headers=cls.view_column_names()))
 
-            # print("{}".format(" | ".join(cls.view_column_names())))
-            # for row in rows:
-            #     display=''.join(str(row[0]))+' '+" ".join(row[1:])
-            #     #
-            #     print(row_format.format(str(row[0]), " ".join(row[1:7])))
-
- #               print("{} {:<30}".format(''.join(str(row[0]))," ".join(row[1:])))
-            #
             return rows
 
     # @classmethod
@@ -215,7 +201,6 @@ class User:
               {} = %s
             """.format(cls.table_name,token_name)
             values=(token_value,)
-            #cursor.execute('SELECT * FROM users WHERE email=%s',(email,))
             cursor.execute(query, values)
             user_data = cursor.fetchone()
             try:
@@ -241,7 +226,6 @@ class User:
                   {} 
                 """.format(cls.table_name)
                 values = ()
-                # cursor.execute('SELECT * FROM users WHERE email=%s',(email,))
                 cursor.execute(query, values)
                 user_data = cursor.fetchone()
                 if user_data:
@@ -262,8 +246,5 @@ class User:
         if response.status != 200:
             print("An error occurred when searching!")
         tweets = json.loads(content.decode('utf-8'))
-
-        # for tweet in tweets['statuses']:
-        #     print(tweet['text'])
         return tweets
 

@@ -3,27 +3,25 @@
 from user import User,choice
 import save
 
-
-
-
-
 class Menu:
-
+    # table_name=input("What table would you like to modify? ")
+    # table_name = 'new_users'
     column_names=None
     @staticmethod
-    def display_table_columns():
+    def display_table_columns(show=0):
         cont = True
         while cont:
-            # table_name=input("What table would you like to modify? ")
             table_name = 'new_users'
             try:
                 user_table = User.load_from_db(table_name)
                 Menu.column_names = user_table.view_column_names()
-                print(" | ".join(Menu.column_names))
+                if show==1:
+                    print(" | ".join(Menu.column_names))
                 cont = False
             except AttributeError:
-                print("Table {} Does Not Exist".format(table_name))
-                print(choice("create table"))
+                if show==1:
+                    print("Table {} Does Not Exist".format(table_name))
+                    print(choice("create table"))
 
     @staticmethod
     def param_type(token):
@@ -71,21 +69,21 @@ class Menu:
 
     @classmethod
     def search(cls,token=None):###MAKE IT SO CAN SEARCH USING THE PARAMATERS OR CREATE IF IT DOES NOT EXIST
-        print("Search")
+        # print("Search")
         User.print_all_from_db()
         token = input("\nPlease select a record (User ID, Screen Name,  Email): ")
         search_var=cls.param_type(token)
-        # print(search_var)
+        print("search {}".format(search_var))
+        print
 
         try:
             search_result = User.load_from_db_by_token(search_var)
-            # print(search_result)
+            print(search_result)
             if search_var[1].lower()=='email':
                 email=search_var[0]
                 try:
                     # search_result=User.load_from_db_by_token(search_var)
-                    print("{} Account already exists".format(search_result.email))##If doesn't exist make a new one. or try again.
-
+                    print("{} Account exists".format(search_result.email))##If doesn't exist make a new one. or try again.
                 except TypeError:
                     print("{} does not have and existing email record.".format(email.upper()+' '))
                     not_there=input('Would you like to create this record?')
@@ -93,18 +91,36 @@ class Menu:
                         Menu.create(email)
                     else:
                         print("Please Select option")
+            elif search_var[1].lower=='id':
+                try:
+                    # search_result=User.load_from_db_by_token(search_var)
+                    print("{} Account exists".format(search_result.email))##If doesn't exist make a new one. or try again.
+                except TypeError:
+                    print("There is no existing record in the database")
         except TypeError:
-            print("{} does not have and existing record.".format(search_var[0].upper() + ' '))
-            not_there = input('Would you like to create this record?')
-            if not_there.lower() == 'y':
-                search_result=Menu.create(search_var[0])
-            else:
-                print("Please Select option")
+            try:
+                int(token)
+                print("No Record Exists")
+                return
+            except ValueError:
+                print("{} does not have and existing email record.".format(token.upper() + ' '))
+                not_there = input('Would you like to create this record?')
+                if not_there.lower() == 'y':
+                    Menu.create(token)
+                else:
+                    # print("Please Select option")
+                    print("No record exists.")
+                    return None
+            # not_there = input('Would you like to create this record?')
+        #     if not_there.lower() == 'y':
+        #         search_result=Menu.create(search_var[0])
+        #     else:
+        #         print("Please Select option")
         # elif search_var[1].lower()=='id':
         # else:
             # id=search_var[0]
             # print(User.load_from_db_by_token(search_var))
-        print("Leaving Search")
+        # print("Leaving Search")
         return search_result, search_var
 
         # elif search_var[1].lower()== 'screen_name':
