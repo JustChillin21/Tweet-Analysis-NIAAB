@@ -20,10 +20,12 @@ def get_request_token():
 def get_oauth_verifier(request_token):
     # Ask the user to authorize our app and give us the pini code
     print("Goto the following site in your browser:")  # """Getting OAuth access token SEC 113"""
-    print("{}?oauth_token={}".format(constants.TW_AUTHORIZATION_URL,
-                                     request_token['oauth_token']))  # """Getting OAuth access token SEC 113"""
+    print(get_oauth_verifier_url(request_token))  # """Getting OAuth access token SEC 113"""
 
     return input("What is the PIN? ")  # """Getting OAuth access token SEC 113"""
+
+def get_oauth_verifier_url(request_token):
+    return "{}?oauth_token={}".format(constants.TW_AUTHORIZATION_URL,request_token['oauth_token'])
 
 def get_access_token(request_token, oauth_verifier):
     # Put a request token into an object "token" Used to combine oauth_token and the oauth_token_secret and verifier

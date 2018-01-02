@@ -235,13 +235,13 @@ class User:
         except pg.Error:
             print("Table Does Not Exist")
 
-    def tw_request(self, topic, verb='GET'):
+    def tw_request(self, topic, uri='https://api.twitter.com/1.1/search/tweets.json?q={}+filter:images',verb='GET'):
 
         authorized_token = oauth2.Token(self.oauth_token, self.oauth_token_secret)
         authorized_client = oauth2.Client(consumer, authorized_token)
 
         response, content = authorized_client.request(
-            'https://api.twitter.com/1.1/search/tweets.json?q={}+filter:images'.format(topic), verb)
+            uri.format(topic), verb)
 
         if response.status != 200:
             print("An error occurred when searching!")
