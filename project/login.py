@@ -1,11 +1,12 @@
-import constants
-import oauth2
-import urllib.parse as urlparse
 import json
+import urllib.parse as urlparse
+
+import oauth2
+
+import constants
+from twitter_utils import consumer, get_request_token
 from user import User
-from twitter_utils import consumer, get_request_token, get_oauth_verifier, get_access_token
-#import urllib.request
-#from bs4 import BeautifulSoup
+
 """The above needed to grab info from web pages"""
 ###Load
 
@@ -60,9 +61,6 @@ print(access_token['screen_name'])     #"""Getting OAuth access token SEC 113"""
 authorized_token = oauth2.Token(access_token['oauth_token'], access_token['oauth_token_secret'])          #"""Performing Twitter Requests : Getting Images Sec 114"""
 authorized_client = oauth2.Client(consumer, authorized_token)          #"""Performing Twitter Requests : Getting Images Sec 114"""
 
-#Create User  def __init__(self,email, first_namu
-#  e,last_name, oauth_token, oauth_token_secret, id=None):
-
 """Could I get this from the twitter request in the user file?"""
 
 response, content = authorized_client.request('https://api.twitter.com/1.1/account/verify_credentials.json?include_email=true','GET')
@@ -91,16 +89,6 @@ response, content = authorized_client.request('https://api.twitter.com/1.1/accou
 
 
 user=User(email=email, screen_name=screen_name, first_name=first_name, middle_name=middle_name,last_name=last_name, oauth_token=access_token['oauth_token'],oauth_token_secret=access_token['oauth_token_secret'])
-#print(user)
 user.save_to_db()
 
-
-#Make Twitter API calls! #Returning a list of tweets
-# response, content = authorized_client.request('https://api.twitter.com/1.1/search/tweets.json?q=computer+filter:images','GET')          #"""Performing Twitter Requests : Getting Images Sec 114"""
-# if response.status != 200:                              #"""Performing Twitter Requests : Getting Images Sec 114"""
-#     print("An error occurred when searching!")          #"""Performing Twitter Requests : Getting Images Sec 114"""
-# tweets = json.loads(content.decode('utf-8'))            #"""Performing Twitter Requests : Getting Images Sec 114"""
-
-#for tweet in tweets['statuses']:          #"""Performing Twitter Requests : Getting Images Sec 114"""
-#    print(tweet['text'])          #"""Performing Twitter Requests : Getting Images Sec 114"""
 

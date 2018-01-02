@@ -1,11 +1,30 @@
 """FLASK"""
 
-from flask import Flask, render_template,session,redirect
-from twitter_utils import get_request_token, get_oauth_verifier_url
+from flask import Flask, render_template, session, redirect, request
+
+from menu import Menu
+from save import create_user
+from twitter_utils import get_request_token, get_oauth_verifier_url, get_access_token
+from user import User
 
 app = Flask(__name__)
 app.secret_key='d5jQGvNZzoLSmg6eut' #Signing session using secret key #Section 10 Lession 120
 
+# try:
+    # Database.initialize(minconn=1, maxconn=10, user='y2venom', password='jun34u2I',
+    #                     database=input("Database name?"),
+    #                     host='SpiderVault')
+# Database.initialize(minconn=1, maxconn=10, user='y2venom', password='jun34u2I',
+#                         database="learning",
+#                         host='SpiderVault')
+#     cont = True
+#     print("Loading...")
+# except pg.Error:
+#     print("Database Connection Error.")
+#     print "Create a new Database"
+    # print(choice("create a new database"))
+    # self.create_database()
+Menu.display_table_columns()
 @app.route('/') ## http://127.0.0.1:4995/  #Section 10 Lession 120
 def homepage():
     return render_template('home.html')
@@ -18,5 +37,22 @@ def twitter_login():
     #Section 10 Lession 120 #redirect the user to Twitter so they can confirm authorization
     return redirect(get_oauth_verifier_url(session['request_token']))
 
-app.run(port=4995)
+# access_token = get_access_token(get_request_token(),request.args.get('oauth_verifier'))
+
+@app.route('/auth/twitter')
+def twitter_auth():
+    oauth_verifier = request.args.get('oauth_verifier')
+    access_token = get_access_token(session['request_token'], oauth_verifier)
+    screen_name=access_token['screen_name']
+    token=Menu.param_type(access_token['screen_name'])
+    print("loading from user...{}{}".format(screen_name, token))
+    user=User.load_from_db_by_token(token)
+    if not user:
+        user=create_user(access_token)
+        user.save_to_db()
+    session['screen_name']=user.screen_name
+    return user.screen_name + " is loaded"
+
+
+app.run(port=4995, debug=True)
 

@@ -1,7 +1,9 @@
 ##Make a program that logs into the different apis from the different sites. .ie twitter, facebook, google, instagram
 
-from user import User,choice
 import save
+from twitter_utils import get_request_token, get_oauth_verifier, get_access_token
+from user import User, choice
+
 
 class Menu:
     # table_name=input("What table would you like to modify? ")
@@ -23,8 +25,9 @@ class Menu:
                     print("Table {} Does Not Exist".format(table_name))
                     print(choice("create table"))
 
-    @staticmethod
-    def param_type(token):
+    @classmethod
+    def param_type(cls,token):
+        # Menu.display_table_columns()
         print("param_type")
         try:
             search_token=int(token)
@@ -38,7 +41,8 @@ class Menu:
             else:
                 name=Menu.column_names[2]
                 param=token,name
-        print("Exit Param Type")
+            print(name)
+        # print("Exit Param Type")
         return param
 
     @staticmethod
@@ -52,13 +56,19 @@ class Menu:
             token_value = input("Please enter email address: ")
         token = (token_value, token_name)
         save_details = input('Would you like to save this user? ([Y]/N): ')
-        print("Attempting to create {}...".format(token))
         if save_details.upper() != 'N':
+            new_user = User.load_from_db_by_token(token)
+            print(new_user)
             try:
 ##USER DOES NOT EXIST, NEED TO GET IT SO SAVE NEW USER
-                print("User {} already exists.".format(User.load_from_db_by_token(token).email.upper()))
-            except TypeError:
-                new_user = save.create_user(token[0])
+                print("User {} already exists.".format(new_user.email.upper()))
+            except AttributeError or TypeError:
+                print("Attempting to create {}...".format(token))
+                request=get_request_token()
+                oauth=get_oauth_verifier(request)
+                access_token = get_access_token(request, oauth)
+                print(access_token)
+                new_user = save.create_user(access_token) ##Fix to use access token
                 print("Saving {}...".format(new_user))
                 new_user.save_to_db()
                 # print(User.load_from_db_by_token(token))
@@ -73,6 +83,7 @@ class Menu:
         User.print_all_from_db()
         token = input("\nPlease select a record (User ID, Screen Name,  Email): ")
         search_var=cls.param_type(token)
+        search_result=None
         print("search {}".format(search_var))
         print
 

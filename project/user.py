@@ -1,5 +1,6 @@
 # from database import connection_pool
 import json
+
 import oauth2
 import psycopg2 as pg
 from tabulate import tabulate
@@ -9,7 +10,7 @@ from twitter_utils import consumer
 
 ##What happens if we stop after the pin. right now it errors our...
 cont = False
-
+t_name='new_users'
 
 def choice(question):
     temp = input("Do you want to {}?".format(question)).lower()
@@ -26,6 +27,7 @@ def choice(question):
     else:
         option = ("Please try again.")
     return option
+
 
 
 while cont == False:
@@ -45,7 +47,7 @@ while cont == False:
 
 
 class User:
-    def __init__(self, email, screen_name, first_name=None, middle_name=None, last_name=None, oauth_token=None,
+    def __init__(self, email=None, screen_name=None, first_name=None, middle_name=None, last_name=None, oauth_token=None,
                  oauth_token_secret=None, id=None):
         self.email = email
         self.first_name = first_name
@@ -84,7 +86,7 @@ class User:
             print("Record Deleted: {}".format(email))
 
     @classmethod
-    def view_column_names(cls, table_name='new_users'):  ##Returns Column Headers from table
+    def view_column_names(cls, table_name=t_name):  ##Returns Column Headers from table
         cls.table_name = table_name
         with CursorFromConnectionFromPool() as cursor:
             query = """
@@ -187,10 +189,11 @@ class User:
     #             return None
 
     @classmethod
-    def load_from_db_by_token(cls, token, table_name='new_user'):
+    def load_from_db_by_token(cls, token, table_name=t_name):
         print("Load from DB by Token")
         token_name = token[1]
         token_value = token[0]
+        print(token, cls.table_name)
         with CursorFromConnectionFromPool() as cursor:
             query = """
             SELECT 
@@ -203,19 +206,20 @@ class User:
             values = (token_value,)
             cursor.execute(query, values)
             user_data = cursor.fetchone()
-            try:
+            if user_data:
                 return cls(email=user_data[1], screen_name=user_data[2], first_name=user_data[3],
                            middle_name=user_data[4], last_name=user_data[5],
                            oauth_token=user_data[6], oauth_token_secret=user_data[7], id=user_data[0])
-            except AttributeError or TypeError:
+            else:# AttributeError or TypeError:
                 # add option to create user if not exist.
                 print("User does not exist")
-                save_option = input("Would you like to save this user [{}]?".format(token_value))
-                ###OPTION TO SAVE FILE###
-        print("Leaving Load from DB by Token")
+                # save_option = input("Would you like to save this user [{}]?".format(token_value))
+                return None
+                # ###OPTION TO SAVE FILE###
+        # print("Leaving Load from DB by Token")
 
     @classmethod
-    def load_from_db(cls, table_name='new_user'):
+    def load_from_db(cls, table_name=t_name):
         cls.table_name = table_name
         try:
             with CursorFromConnectionFromPool() as cursor:

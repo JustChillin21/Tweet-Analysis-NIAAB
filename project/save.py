@@ -1,18 +1,15 @@
-import oauth2
 import json
+
+import oauth2
+
+from twitter_utils import consumer, get_names
 from user import User
-from twitter_utils import consumer, get_request_token, get_oauth_verifier, get_access_token, get_names
-
-def create_user(email):
 
 
-###GET REQUEST TOKEN
-    # """This is just used to identify the app, cannot be used to make requests"""
-    request_token = get_request_token()
-###END OF GET REQUEST TOKEN
-
-# ##GET OAUTH VERIFIER
-    oauth_verifier = get_oauth_verifier(request_token)
+def create_user(access_token=None):
+    # request_token = req_token
+    #
+    # oauth_verifier = oauth
 ##END OF GET OAUTH 2 VERIFIER
 
 ##RECREATE CLIENT WITH VERIFIER
@@ -23,7 +20,7 @@ def create_user(email):
 #     client = oauth2.Client(consumer, token)
 #
 # #Ask Twitter fore an access token, and Twitter knows it should give us it because we've verified the request token
-    access_token = get_access_token(request_token, oauth_verifier)
+#     access_token = get_access_token(request_token, oauth_verifier)
 #     print(access_token['screen_name'])
 ##END OF RECREATE CLIENT WITH VERIFIER
 

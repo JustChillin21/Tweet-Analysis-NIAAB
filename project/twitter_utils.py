@@ -1,6 +1,8 @@
-import oauth2
-import constants
 import urllib.parse as urlparse
+
+import oauth2
+
+import constants
 
 consumer = oauth2.Consumer(constants.TW_CONSUMER_KEY, constants.TW_CONSUMER_SECRET)
 
@@ -15,9 +17,10 @@ def get_request_token():
             "An error occurred getting the request token from Twitter.")  # """Getting OAuth access token SEC 113"""
 
     # Get the request token parsing the query string returned
-    return dict(urlparse.parse_qsl(content.decode('utf-8')))  # """Getting OAuth access token SEC 113"""
+    request_token=dict(urlparse.parse_qsl(content.decode('utf-8')))
+    return request_token  # """Getting OAuth access token SEC 113"""
 
-def get_oauth_verifier(request_token):
+def get_oauth_verifier(request_token):  ##NEED TO MODIFY IT FOR THE CONSOLE VERSION
     # Ask the user to authorize our app and give us the pini code
     print("Goto the following site in your browser:")  # """Getting OAuth access token SEC 113"""
     print(get_oauth_verifier_url(request_token))  # """Getting OAuth access token SEC 113"""
