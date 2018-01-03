@@ -1,6 +1,6 @@
 """FLASK"""
 
-from flask import Flask, render_template, session, redirect, request, url_for
+from flask import Flask, render_template, session, redirect, request, url_for, g
 from menu import Menu
 from save import create_user
 from twitter_utils import get_request_token, get_oauth_verifier_url, get_access_token
@@ -10,6 +10,13 @@ app = Flask(__name__)
 app.secret_key='d5jQGvNZzoLSmg6eut' #Signing session using secret key #Section 10 Lession 120
 
 Menu.display_table_columns() #initialize database and return column names
+
+@app.before_request #Section 10-123
+def load_user():
+    if 'screen_name' in session:
+        g.user = User.load_from_db_by_token((session['screen_name'],'screen_name'))
+
+
 @app.route('/') ## http://127.0.0.1:4995/  #Section 10 Lession 120
 def homepage():
     return render_template('home.html')
@@ -22,7 +29,10 @@ def twitter_login():
     #Section 10 Lession 120 #redirect the user to Twitter so they can confirm authorization
     return redirect(get_oauth_verifier_url(session['request_token']))
 
-# access_token = get_access_token(get_request_token(),request.args.get('oauth_verifier'))
+@app.route('/logout')
+def logout():
+    session.clear()
+    return redirect(url_for('homepage'))
 
 @app.route('/auth/twitter')
 def twitter_auth():
@@ -41,11 +51,9 @@ def twitter_auth():
 
 @app.route('/profile')
 def profile():
-
-    user=User.load_from_db_by_token((session['screen_name'],'screen_name'))
-    if not user:
+    if not g.user:
         return redirect(url_for('/login/twitter'))
-    return render_template('profile.html', screen_name=user.screen_name,email=user.email )
+    return render_template('profile.html', user=g.user )
 
 
 app.run(port=4995, debug=True)

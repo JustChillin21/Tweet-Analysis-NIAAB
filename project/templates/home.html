@@ -6,8 +6,10 @@
 
 </head>
 <body>
-    <h1>Hello, world!</h1>
-    <a href="/login/twitter">To Login</a>
-    <a href="/profile"> to Profile</a>
+    <h1>Hello, {{g.user.first_name}}!</h1>
+    <ul>
+        <li><a href="{{ url_for('twitter_login') }}">Login with Twitter</a></li>
+        <li><a href="{{ url_for('profile') }}"> View Profile</a></li>
+    </ul>
 </body>
 </html>
