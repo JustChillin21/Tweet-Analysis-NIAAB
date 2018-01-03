@@ -8,7 +8,6 @@
 </head>
 
 <body>
-    <!--<input type="text" name="query" id="query" class="input"/>-->
     <div class="container">
         <ul class="list-group" id="tweets">
             {% for element in content%}
@@ -16,6 +15,9 @@
             {% endfor %}
         </ul>
     </div>
+    <ul>
+        <li><a href="{{ url_for('profile') }}"> Return to Profile</a></li>
+    </ul>
 </body>
 
 </html>

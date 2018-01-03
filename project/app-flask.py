@@ -66,7 +66,8 @@ def profile():
 @app.route('/search')
 def search():
     topic=request.args.get('q')
-    tweets = g.user.tw_request(topic=topic)
+    filterby=request.args.get('fb')
+    tweets = g.user.tw_request(topic=topic, filterby=filterby)
     tweet_texts=[tweet['text'] for tweet in tweets['statuses']]
     return render_template('search.html', content=tweet_texts)
 

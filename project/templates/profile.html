@@ -9,9 +9,16 @@
         <ul title="Profile">
             <li><p>Screen Name: {{user.screen_name}}</p></li>
             <li><p>Email Address: {{user.email}}</p></li>
+            <!--<li><a href="{{ url_for('search') }}">Search Tweets</a></li>-->
             <li><a href="{{ url_for('homepage') }}">Back</a></li>
             <li><a href="{{ url_for('logout') }}">Logout</a></li>
-
         </ul>
+
+    <form action="{{url_for('search')}}">
+        <label for="q">Twitter search</label>
+        <input type="text" name="q" id="q" placeholder="Your twitter search" class="input"/>
+        <input type="text" name="fb" id="fb" placeholder="Filter Search (Optional)" class="input"/>
+        <button type="submit">Search</button>
+    </form>
 </body>
 </html>
