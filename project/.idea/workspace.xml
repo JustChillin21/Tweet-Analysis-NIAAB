@@ -1,10 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="59657c1d-199c-4d6b-a5df-6b5a6f40fa32" name="Default" comment="Section 10 Lesson 125 - Searching Tweets and Displaying Text&#10;&#10;+search()&#10;    -allow the user to change tweet search by changing q in the address&#10;+tw_request()&#10;- modified it so that the user can change the query and the filter&#10;+search.html&#10;    - for entity to return values from python.&#10;&#10;=have to modify the twitter utils file to return from website authentication. &#10;-should make an auto verification function in console version&#10;-need to clean up code">
+    <list default="true" id="59657c1d-199c-4d6b-a5df-6b5a6f40fa32" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app-flask.py" afterPath="$PROJECT_DIR$/app-flask.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/user.py" afterPath="$PROJECT_DIR$/user.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -622,7 +620,14 @@
       <option name="project" value="LOCAL" />
       <updated>1514990214197</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Section 10 Lesson 125 - Searching Tweets and Displaying Text&#10;&#10;+search()&#10;    -allow the user to change tweet search by changing q in the address&#10;+tw_request(topic, uri, filterby, verb)&#10;    -need to change the uri so that it is multi faceted for different sites.&#10;    - modified it so that the user can change the query and the filter&#10;&#10;&#10;=have to modify the twitter utils file to return from website authentication. &#10;-should make an auto verification function in console version&#10;-need to clean up code">
+      <created>1514992424398</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1514992424398</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TodoView" selected-index="1">
@@ -637,7 +642,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-5" y="0" width="1936" height="1066" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3290461" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3290461" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
@@ -700,7 +704,9 @@
     <MESSAGE value="Section 10 Lesson 123 - Flask before_request Decorator&#10;+app.before_request&#10;-load_user() &#10;    - loads the user if it exists in the session before everything&#10;&#10;-logout() &#10;    - clears the session and user has to login again.&#10;&#10;=have to modify the twitter utils file to return from website authentication. &#10;-should make an auto verification function in console version&#10;-need to clean up code" />
     <MESSAGE value="Section 10 Lesson 124 - Checking if the user is already logged in&#10;+twitter_login()&#10;    - checks to see if 'screen_name' exists in session, &#10;    if it does, it goes directly to profile&#10;+homepage() &#10;    - if session already exists, put in user name, else basic greeting&#10;+profile()&#10;    -if user tries to go to profile and no session is saved, &#10;    it will automatically bring them to the authent page&#10;&#10;=have to modify the twitter utils file to return from website authentication. &#10;-should make an auto verification function in console version&#10;-need to clean up code" />
     <MESSAGE value="Section 10 Lesson 125 - Searching Tweets and Displaying Text&#10;&#10;+search()&#10;    - searches for tweets using tw_request() and returns it to search.html&#10;+search.html&#10;    - for entity to return values from python.&#10;&#10;=have to modify the twitter utils file to return from website authentication. &#10;-should make an auto verification function in console version&#10;-need to clean up code" />
-    <option name="LAST_COMMIT_MESSAGE" value="Section 10 Lesson 125 - Searching Tweets and Displaying Text&#10;&#10;+search()&#10;    - searches for tweets using tw_request() and returns it to search.html&#10;+search.html&#10;    - for entity to return values from python.&#10;&#10;=have to modify the twitter utils file to return from website authentication. &#10;-should make an auto verification function in console version&#10;-need to clean up code" />
+    <MESSAGE value="Section 10 Lesson 125 - Searching Tweets and Displaying Text&#10;&#10;+search()&#10;    -allow the user to change tweet search by changing q in the address&#10;+tw_request(topic, uri, filterby, verb)&#10;    -need to change the uri so that it is multi faceted for different sites.&#10;    - modified it so that the user can change the query and the filter&#10;&#10;&#10;=have to modify the twitter utils file to return from website authentication. &#10;-should make an auto verification function in console version&#10;-need to clean up code" />
+    <MESSAGE value="Section 10 Lesson 126 - Searching for Different things&#10;&#10;+search()&#10;    -allow the user to change tweet search by changing q in the address&#10;+tw_request(topic, uri, filterby, verb)&#10;    -need to change the uri so that it is multi faceted for different sites.&#10;    - modified it so that the user can change the query and the filter&#10;&#10;&#10;=have to modify the twitter utils file to return from website authentication. &#10;-should make an auto verification function in console version&#10;-need to clean up code" />
+    <option name="LAST_COMMIT_MESSAGE" value="Section 10 Lesson 126 - Searching for Different things&#10;&#10;+search()&#10;    -allow the user to change tweet search by changing q in the address&#10;+tw_request(topic, uri, filterby, verb)&#10;    -need to change the uri so that it is multi faceted for different sites.&#10;    - modified it so that the user can change the query and the filter&#10;&#10;&#10;=have to modify the twitter utils file to return from website authentication. &#10;-should make an auto verification function in console version&#10;-need to clean up code" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
