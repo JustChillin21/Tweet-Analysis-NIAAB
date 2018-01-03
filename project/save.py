@@ -41,19 +41,6 @@ def create_user(access_token=None):
     screen_name=infos['screen_name']
     name=infos['name'].split(" ")
     first_name, middle_name, last_name=get_names(name)
-    #
-    # if len(name)== 3:
-    #     first_name=name[0]
-    #     middle_name=name[1]
-    #     last_name=name[2]
-    # elif len(name)== 2:
-    #     first_name=name[0]
-    #     last_name=name[1]
-    #     middle_name=''
-    # elif len(name)== 1:
-    #     first_name = name[0]
-    #     middle_name = ''
-    #     last_name = ''
 
     user=User(email=email, screen_name=screen_name, first_name=first_name, middle_name=middle_name,last_name=last_name, oauth_token=access_token['oauth_token'],oauth_token_secret=access_token['oauth_token_secret'])
     return user

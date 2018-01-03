@@ -9,7 +9,7 @@ class Database:
     @classmethod
     def initialize(cls, **kwargs):
         cls.__connection_pool = pg.pool.SimpleConnectionPool(**kwargs)
-        print(":Initialized:")
+        print(":Database Initialized:")
 
     @classmethod
     def get_connection(cls):

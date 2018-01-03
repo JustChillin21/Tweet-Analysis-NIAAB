@@ -5,11 +5,13 @@
     <title>User Profile</title>
 </head>
 <body>
-    <h2> Welcome</h2>
+    <h2> Welcome {{user.first_name}}</h2>
         <ul title="Profile">
             <li><p>Screen Name: {{user.screen_name}}</p></li>
             <li><p>Email Address: {{user.email}}</p></li>
+            <li><a href="{{ url_for('homepage') }}">Back</a></li>
             <li><a href="{{ url_for('logout') }}">Logout</a></li>
+
         </ul>
 </body>
 </html>

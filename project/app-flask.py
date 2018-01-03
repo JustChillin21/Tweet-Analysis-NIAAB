@@ -19,15 +19,23 @@ def load_user():
 
 @app.route('/') ## http://127.0.0.1:4995/  #Section 10 Lession 120
 def homepage():
-    return render_template('home.html')
+    if 'screen_name' in session:
+        user=g.user.first_name
+    else:
+        user="There"
+    return render_template('home.html',user=user)
+    #
+    # return render_template('home.html')
 
 @app.route('/login/twitter')
 def twitter_login():
     # request_token=get_request_token()                 #Cleaned it up by rolling into one line #Section 10 Lession 120
+    if 'screen_name' in session:
+        return redirect(url_for('profile'))
     session['request_token'] = get_request_token()
-
-    #Section 10 Lession 120 #redirect the user to Twitter so they can confirm authorization
     return redirect(get_oauth_verifier_url(session['request_token']))
+    #Section 10 Lession 120 #redirect the user to Twitter so they can confirm authorization
+
 
 @app.route('/logout')
 def logout():
@@ -51,10 +59,9 @@ def twitter_auth():
 
 @app.route('/profile')
 def profile():
-    if not g.user:
-        return redirect(url_for('/login/twitter'))
-    return render_template('profile.html', user=g.user )
-
+    if 'screen_name' in session:
+        return render_template('profile.html', user=g.user)
+    return redirect(url_for('twitter_login'))
 
 app.run(port=4995, debug=True)
 
