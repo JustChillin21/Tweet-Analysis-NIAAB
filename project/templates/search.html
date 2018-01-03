@@ -2,13 +2,20 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}">
     <title>Search Results</title>
 </head>
 
 <body>
-    {% for element in content%}
-        <p>{{ element}}</p>
-    {% endfor %}
+    <!--<input type="text" name="query" id="query" class="input"/>-->
+    <div class="container">
+        <ul class="list-group" id="tweets">
+            {% for element in content%}
+                <li class="list-group-item">{{ element}}</li>
+            {% endfor %}
+        </ul>
+    </div>
 </body>
 
 </html>
