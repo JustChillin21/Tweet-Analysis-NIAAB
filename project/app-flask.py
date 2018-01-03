@@ -63,5 +63,11 @@ def profile():
         return render_template('profile.html', user=g.user)
     return redirect(url_for('twitter_login'))
 
+@app.route('/search')
+def search():
+    tweets = g.user.tw_request('computers')
+    tweet_texts=[tweet['text'] for tweet in tweets['statuses']]
+    return render_template('search.html', content=tweet_texts)
+
 app.run(port=4995, debug=True)
 

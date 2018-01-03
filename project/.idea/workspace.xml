@@ -1,13 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="59657c1d-199c-4d6b-a5df-6b5a6f40fa32" name="Default" comment="Section 10 Lesson 124 - Checking if the user is already logged in&#10;+twitter_login()&#10;    - checks to see if 'screen_name' exists in session, &#10;    if it does, it goes directly to profile&#10;+homepage() &#10;    - if session already exists, put in user name, else basic greeting&#10;&#10;&#10;=have to modify the twitter utils file to return from website authentication. &#10;-should make an auto verification function in console version&#10;-need to clean up code">
+    <list default="true" id="59657c1d-199c-4d6b-a5df-6b5a6f40fa32" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/templates/search.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app-flask.py" afterPath="$PROJECT_DIR$/app-flask.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/database.py" afterPath="$PROJECT_DIR$/database.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/save.py" afterPath="$PROJECT_DIR$/save.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/home.html" afterPath="$PROJECT_DIR$/templates/home.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/profile.html" afterPath="$PROJECT_DIR$/templates/profile.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/user.py" afterPath="$PROJECT_DIR$/user.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -26,7 +25,7 @@
     <SUITE FILE_PATH="coverage/project$build_menu.coverage" NAME="build_menu Coverage Results" MODIFIED="1512540715859" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/project$menu.coverage" NAME="menu Coverage Results" MODIFIED="1512823514974" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/project$save.coverage" NAME="save Coverage Results" MODIFIED="1512824741476" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/Tweet_Analyser$app_flask.coverage" NAME="app-flask Coverage Results" MODIFIED="1514984817218" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Tweet_Analyser$app_flask.coverage" NAME="app-flask Coverage Results" MODIFIED="1514989542399" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/project$app.coverage" NAME="app Coverage Results" MODIFIED="1514594787859" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
   <component name="DatabaseView">
@@ -46,7 +45,7 @@
         <entry file="file://$PROJECT_DIR$/app.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="439">
-              <caret line="29" column="0" lean-forward="false" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
+              <caret line="35" column="32" lean-forward="true" selection-start-line="34" selection-start-column="8" selection-end-line="35" selection-end-column="32" />
               <folding>
                 <element signature="e#1#22#0" expanded="true" />
               </folding>
@@ -57,18 +56,8 @@
       <file leaf-file-name="home.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/home.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="8" column="14" lean-forward="false" selection-start-line="8" selection-start-column="14" selection-end-line="8" selection-end-column="24" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="profile.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/profile.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="16" column="7" lean-forward="true" selection-start-line="16" selection-start-column="7" selection-end-line="16" selection-end-column="7" />
+            <state relative-caret-position="204">
+              <caret line="12" column="60" lean-forward="false" selection-start-line="12" selection-start-column="60" selection-end-line="12" selection-end-column="60" />
               <folding />
             </state>
           </provider>
@@ -77,8 +66,8 @@
       <file leaf-file-name="app-flask.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app-flask.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="58" column="0" lean-forward="true" selection-start-line="58" selection-start-column="0" selection-end-line="58" selection-end-column="0" />
+            <state relative-caret-position="528">
+              <caret line="70" column="0" lean-forward="true" selection-start-line="70" selection-start-column="0" selection-end-line="70" selection-end-column="0" />
               <folding>
                 <element signature="e#13#93#0" expanded="true" />
               </folding>
@@ -86,26 +75,37 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="search.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/search.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="221">
+              <caret line="13" column="7" lean-forward="true" selection-start-line="13" selection-start-column="7" selection-end-line="13" selection-end-column="7" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="user.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/user.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2380">
-              <caret line="220" column="16" lean-forward="true" selection-start-line="220" selection-start-column="16" selection-end-line="220" selection-end-column="16" />
+            <state relative-caret-position="473">
+              <caret line="253" column="0" lean-forward="true" selection-start-line="253" selection-start-column="0" selection-end-line="253" selection-end-column="0" />
               <folding>
                 <element signature="e#39#50#0" expanded="true" />
                 <element signature="e#342#799#0" expanded="false" />
+                <element signature="e#828#1414#0" expanded="false" />
                 <element signature="e#3697#6283#0" expanded="false" />
                 <element signature="e#6706#6720#0" expanded="false" />
-                <marker date="1514913848174" expanded="true" signature="2247:2388" ph="INSERT INTO missing_value... " />
-                <marker date="1514913848174" expanded="true" signature="2845:2874" ph="DELETE FROM " />
-                <marker date="1514913848174" expanded="true" signature="3273:3360" ph="SELECT * FRO... users" />
-                <marker date="1514913848174" expanded="true" signature="4629:4668" ph="UPDATE users... " />
-                <marker date="1514913848174" expanded="true" signature="5194:5232" ph="UPDATE users... " />
-                <marker date="1514913848174" expanded="true" signature="5756:5792" ph="UPDATE users... " />
-                <marker date="1514913848174" expanded="true" signature="6457:6485" ph="SELECT * FRO... " />
-                <marker date="1514913848174" expanded="true" signature="6863:6972" ph="SELECT * FRO... missing_value" />
-                <marker date="1514913848174" expanded="true" signature="7847:7948" ph="SELECT * FRO... missing_value" />
-                <marker date="1514913848174" expanded="true" signature="9012:9081" ph="SELECT * FRO... missing_value" />
+                <marker date="1514987174764" expanded="true" signature="2247:2388" ph="INSERT INTO missing_value... " />
+                <marker date="1514987174764" expanded="true" signature="2845:2874" ph="DELETE FROM " />
+                <marker date="1514987174764" expanded="true" signature="3273:3360" ph="SELECT * FRO... users" />
+                <marker date="1514987174764" expanded="true" signature="4629:4668" ph="UPDATE users... " />
+                <marker date="1514987174764" expanded="true" signature="5194:5232" ph="UPDATE users... " />
+                <marker date="1514987174764" expanded="true" signature="5756:5792" ph="UPDATE users... " />
+                <marker date="1514987174764" expanded="true" signature="6457:6485" ph="SELECT * FRO... " />
+                <marker date="1514987174764" expanded="true" signature="6863:6972" ph="SELECT * FRO... missing_value" />
+                <marker date="1514987174764" expanded="true" signature="7847:7948" ph="SELECT * FRO... missing_value" />
+                <marker date="1514987174764" expanded="true" signature="9012:9081" ph="SELECT * FRO... missing_value" />
               </folding>
             </state>
           </provider>
@@ -121,19 +121,17 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="menu.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/menu.py">
+      <file leaf-file-name="twitter_utils.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/twitter_utils.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1530">
-              <caret line="90" column="50" lean-forward="true" selection-start-line="90" selection-start-column="50" selection-end-line="90" selection-end-column="50" />
+            <state relative-caret-position="371">
+              <caret line="28" column="0" lean-forward="true" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
               <folding>
-                <element signature="e#119#130#0" expanded="true" />
-                <element signature="e#3657#4275#0" expanded="false" />
-                <element signature="e#5233#5293#0" expanded="false" />
-                <element signature="e#5903#6577#0" expanded="false" />
-                <element signature="e#7295#7319#0" expanded="false" />
-                <element signature="e#7477#7681#0" expanded="false" />
-                <element signature="e#7729#8009#0" expanded="false" />
+                <element signature="e#0#31#0" expanded="true" />
+                <element signature="e#1065#1400#0" expanded="false" />
+                <element signature="e#1449#1543#0" expanded="false" />
+                <element signature="e#1602#2817#0" expanded="false" />
+                <element signature="e#2844#3241#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -214,14 +212,15 @@
         <option value="$PROJECT_DIR$/requirements.txt" />
         <option value="$PROJECT_DIR$/app-old.py" />
         <option value="$PROJECT_DIR$/login.py" />
-        <option value="$PROJECT_DIR$/user.py" />
         <option value="$PROJECT_DIR$/app.py" />
         <option value="$PROJECT_DIR$/twitter_utils.py" />
         <option value="$PROJECT_DIR$/menu.py" />
         <option value="$PROJECT_DIR$/save.py" />
-        <option value="$PROJECT_DIR$/templates/home.html" />
         <option value="$PROJECT_DIR$/database.py" />
         <option value="$PROJECT_DIR$/templates/profile.html" />
+        <option value="$PROJECT_DIR$/user.py" />
+        <option value="$PROJECT_DIR$/templates/search.html" />
+        <option value="$PROJECT_DIR$/templates/home.html" />
         <option value="$PROJECT_DIR$/app-flask.py" />
       </list>
     </option>
@@ -621,7 +620,14 @@
       <option name="project" value="LOCAL" />
       <updated>1514972691792</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Section 10 Lesson 124 - Checking if the user is already logged in&#10;+twitter_login()&#10;    - checks to see if 'screen_name' exists in session, &#10;    if it does, it goes directly to profile&#10;+homepage() &#10;    - if session already exists, put in user name, else basic greeting&#10;+profile()&#10;    -if user tries to go to profile and no session is saved, &#10;    it will automatically bring them to the authent page&#10;&#10;=have to modify the twitter utils file to return from website authentication. &#10;-should make an auto verification function in console version&#10;-need to clean up code">
+      <created>1514985226201</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1514985226201</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TodoView" selected-index="1">
@@ -643,7 +649,7 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39764202" sideWeight="0.5042644" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3290461" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3290461" sideWeight="0.49791667" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3290461" sideWeight="0.49791667" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3290461" sideWeight="0.49791667" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3290461" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26865673" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32995737" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -651,7 +657,7 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Concurrent Activities Diagram" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3290461" sideWeight="0.49791667" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39764202" sideWeight="0.49573562" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.39764202" sideWeight="0.49573562" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32995737" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -697,7 +703,8 @@
     <MESSAGE value="Section 10 Lesson 122 - Creating User Profile&#10;&#10;+profile.html &#10;    -created profile html file and passed variables to it using {{}}&#10;    -passed user name and user email&#10;profile()&#10;    -loads the user using session info incase we don't go via the login &#10;    route.&#10;    -if no user exists, redirects back to the /login/tritter page&#10;=have to modify the twitter utils file to return from website authentication. &#10;-should make an auto verification function in console version&#10;-need to clean up code" />
     <MESSAGE value="Section 10 Lesson 123 - Flask before_request Decorator&#10;+app.before_request&#10;-load_user() - loads the user if it exists in the session before everything&#10;&#10;=have to modify the twitter utils file to return from website authentication. &#10;-should make an auto verification function in console version&#10;-need to clean up code" />
     <MESSAGE value="Section 10 Lesson 123 - Flask before_request Decorator&#10;+app.before_request&#10;-load_user() &#10;    - loads the user if it exists in the session before everything&#10;&#10;-logout() &#10;    - clears the session and user has to login again.&#10;&#10;=have to modify the twitter utils file to return from website authentication. &#10;-should make an auto verification function in console version&#10;-need to clean up code" />
-    <option name="LAST_COMMIT_MESSAGE" value="Section 10 Lesson 123 - Flask before_request Decorator&#10;+app.before_request&#10;-load_user() &#10;    - loads the user if it exists in the session before everything&#10;&#10;-logout() &#10;    - clears the session and user has to login again.&#10;&#10;=have to modify the twitter utils file to return from website authentication. &#10;-should make an auto verification function in console version&#10;-need to clean up code" />
+    <MESSAGE value="Section 10 Lesson 124 - Checking if the user is already logged in&#10;+twitter_login()&#10;    - checks to see if 'screen_name' exists in session, &#10;    if it does, it goes directly to profile&#10;+homepage() &#10;    - if session already exists, put in user name, else basic greeting&#10;+profile()&#10;    -if user tries to go to profile and no session is saved, &#10;    it will automatically bring them to the authent page&#10;&#10;=have to modify the twitter utils file to return from website authentication. &#10;-should make an auto verification function in console version&#10;-need to clean up code" />
+    <option name="LAST_COMMIT_MESSAGE" value="Section 10 Lesson 124 - Checking if the user is already logged in&#10;+twitter_login()&#10;    - checks to see if 'screen_name' exists in session, &#10;    if it does, it goes directly to profile&#10;+homepage() &#10;    - if session already exists, put in user name, else basic greeting&#10;+profile()&#10;    -if user tries to go to profile and no session is saved, &#10;    it will automatically bring them to the authent page&#10;&#10;=have to modify the twitter utils file to return from website authentication. &#10;-should make an auto verification function in console version&#10;-need to clean up code" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -739,8 +746,8 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/app-flask.py</url>
-          <line>15</line>
-          <option name="timeStamp" value="118" />
+          <line>68</line>
+          <option name="timeStamp" value="119" />
         </line-breakpoint>
       </breakpoints>
       <breakpoints-dialog>
@@ -753,7 +760,7 @@
           </properties>
         </breakpoint>
       </default-breakpoints>
-      <option name="time" value="119" />
+      <option name="time" value="120" />
     </breakpoint-manager>
     <watches-manager>
       <configuration name="PythonConfigurationType">
@@ -766,14 +773,6 @@
     </watches-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/constants.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="0" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/menu.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1156">
@@ -820,18 +819,19 @@
           <folding>
             <element signature="e#39#50#0" expanded="true" />
             <element signature="e#342#799#0" expanded="false" />
+            <element signature="e#828#1414#0" expanded="false" />
             <element signature="e#3697#6283#0" expanded="false" />
             <element signature="e#6706#6720#0" expanded="false" />
-            <marker date="1514913848174" expanded="true" signature="2247:2388" ph="INSERT INTO missing_value... " />
-            <marker date="1514913848174" expanded="true" signature="2845:2874" ph="DELETE FROM " />
-            <marker date="1514913848174" expanded="true" signature="3273:3360" ph="SELECT * FRO... users" />
-            <marker date="1514913848174" expanded="true" signature="4629:4668" ph="UPDATE users... " />
-            <marker date="1514913848174" expanded="true" signature="5194:5232" ph="UPDATE users... " />
-            <marker date="1514913848174" expanded="true" signature="5756:5792" ph="UPDATE users... " />
-            <marker date="1514913848174" expanded="true" signature="6457:6485" ph="SELECT * FRO... " />
-            <marker date="1514913848174" expanded="true" signature="6863:6972" ph="SELECT * FRO... missing_value" />
-            <marker date="1514913848174" expanded="true" signature="7847:7948" ph="SELECT * FRO... missing_value" />
-            <marker date="1514913848174" expanded="true" signature="9012:9081" ph="SELECT * FRO... missing_value" />
+            <marker date="1514987174764" expanded="true" signature="2247:2388" ph="INSERT INTO missing_value... " />
+            <marker date="1514987174764" expanded="true" signature="2845:2874" ph="DELETE FROM " />
+            <marker date="1514987174764" expanded="true" signature="3273:3360" ph="SELECT * FRO... users" />
+            <marker date="1514987174764" expanded="true" signature="4629:4668" ph="UPDATE users... " />
+            <marker date="1514987174764" expanded="true" signature="5194:5232" ph="UPDATE users... " />
+            <marker date="1514987174764" expanded="true" signature="5756:5792" ph="UPDATE users... " />
+            <marker date="1514987174764" expanded="true" signature="6457:6485" ph="SELECT * FRO... " />
+            <marker date="1514987174764" expanded="true" signature="6863:6972" ph="SELECT * FRO... missing_value" />
+            <marker date="1514987174764" expanded="true" signature="7847:7948" ph="SELECT * FRO... missing_value" />
+            <marker date="1514987174764" expanded="true" signature="9012:9081" ph="SELECT * FRO... missing_value" />
           </folding>
         </state>
       </provider>
@@ -980,18 +980,19 @@
           <folding>
             <element signature="e#39#50#0" expanded="true" />
             <element signature="e#342#799#0" expanded="false" />
+            <element signature="e#828#1414#0" expanded="false" />
             <element signature="e#3697#6283#0" expanded="false" />
             <element signature="e#6706#6720#0" expanded="false" />
-            <marker date="1514913848174" expanded="true" signature="2247:2388" ph="INSERT INTO missing_value... " />
-            <marker date="1514913848174" expanded="true" signature="2845:2874" ph="DELETE FROM " />
-            <marker date="1514913848174" expanded="true" signature="3273:3360" ph="SELECT * FRO... users" />
-            <marker date="1514913848174" expanded="true" signature="4629:4668" ph="UPDATE users... " />
-            <marker date="1514913848174" expanded="true" signature="5194:5232" ph="UPDATE users... " />
-            <marker date="1514913848174" expanded="true" signature="5756:5792" ph="UPDATE users... " />
-            <marker date="1514913848174" expanded="true" signature="6457:6485" ph="SELECT * FRO... " />
-            <marker date="1514913848174" expanded="true" signature="6863:6972" ph="SELECT * FRO... missing_value" />
-            <marker date="1514913848174" expanded="true" signature="7847:7948" ph="SELECT * FRO... missing_value" />
-            <marker date="1514913848174" expanded="true" signature="9012:9081" ph="SELECT * FRO... missing_value" />
+            <marker date="1514987174764" expanded="true" signature="2247:2388" ph="INSERT INTO missing_value... " />
+            <marker date="1514987174764" expanded="true" signature="2845:2874" ph="DELETE FROM " />
+            <marker date="1514987174764" expanded="true" signature="3273:3360" ph="SELECT * FRO... users" />
+            <marker date="1514987174764" expanded="true" signature="4629:4668" ph="UPDATE users... " />
+            <marker date="1514987174764" expanded="true" signature="5194:5232" ph="UPDATE users... " />
+            <marker date="1514987174764" expanded="true" signature="5756:5792" ph="UPDATE users... " />
+            <marker date="1514987174764" expanded="true" signature="6457:6485" ph="SELECT * FRO... " />
+            <marker date="1514987174764" expanded="true" signature="6863:6972" ph="SELECT * FRO... missing_value" />
+            <marker date="1514987174764" expanded="true" signature="7847:7948" ph="SELECT * FRO... missing_value" />
+            <marker date="1514987174764" expanded="true" signature="9012:9081" ph="SELECT * FRO... missing_value" />
           </folding>
         </state>
       </provider>
@@ -1036,18 +1037,19 @@
           <folding>
             <element signature="e#39#50#0" expanded="true" />
             <element signature="e#342#799#0" expanded="false" />
+            <element signature="e#828#1414#0" expanded="false" />
             <element signature="e#3697#6283#0" expanded="false" />
             <element signature="e#6706#6720#0" expanded="false" />
-            <marker date="1514913848174" expanded="true" signature="2247:2388" ph="INSERT INTO missing_value... " />
-            <marker date="1514913848174" expanded="true" signature="2845:2874" ph="DELETE FROM " />
-            <marker date="1514913848174" expanded="true" signature="3273:3360" ph="SELECT * FRO... users" />
-            <marker date="1514913848174" expanded="true" signature="4629:4668" ph="UPDATE users... " />
-            <marker date="1514913848174" expanded="true" signature="5194:5232" ph="UPDATE users... " />
-            <marker date="1514913848174" expanded="true" signature="5756:5792" ph="UPDATE users... " />
-            <marker date="1514913848174" expanded="true" signature="6457:6485" ph="SELECT * FRO... " />
-            <marker date="1514913848174" expanded="true" signature="6863:6972" ph="SELECT * FRO... missing_value" />
-            <marker date="1514913848174" expanded="true" signature="7847:7948" ph="SELECT * FRO... missing_value" />
-            <marker date="1514913848174" expanded="true" signature="9012:9081" ph="SELECT * FRO... missing_value" />
+            <marker date="1514987174764" expanded="true" signature="2247:2388" ph="INSERT INTO missing_value... " />
+            <marker date="1514987174764" expanded="true" signature="2845:2874" ph="DELETE FROM " />
+            <marker date="1514987174764" expanded="true" signature="3273:3360" ph="SELECT * FRO... users" />
+            <marker date="1514987174764" expanded="true" signature="4629:4668" ph="UPDATE users... " />
+            <marker date="1514987174764" expanded="true" signature="5194:5232" ph="UPDATE users... " />
+            <marker date="1514987174764" expanded="true" signature="5756:5792" ph="UPDATE users... " />
+            <marker date="1514987174764" expanded="true" signature="6457:6485" ph="SELECT * FRO... " />
+            <marker date="1514987174764" expanded="true" signature="6863:6972" ph="SELECT * FRO... missing_value" />
+            <marker date="1514987174764" expanded="true" signature="7847:7948" ph="SELECT * FRO... missing_value" />
+            <marker date="1514987174764" expanded="true" signature="9012:9081" ph="SELECT * FRO... missing_value" />
           </folding>
         </state>
       </provider>
@@ -1175,24 +1177,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../../../../../Python/projects/warriors_dbase/venv/Lib/site-packages/flask/app.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="1460" column="0" lean-forward="false" selection-start-line="1460" selection-start-column="0" selection-end-line="1460" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/twitter_utils.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="476">
-          <caret line="28" column="0" lean-forward="true" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#31#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/menu.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1530">
@@ -1209,37 +1193,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../../../../../Python/projects/warriors_dbase/venv/Lib/site-packages/flask/helpers.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="607">
-          <caret line="185" column="4" lean-forward="false" selection-start-line="185" selection-start-column="4" selection-end-line="185" selection-end-column="4" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/user.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2380">
-          <caret line="220" column="16" lean-forward="true" selection-start-line="220" selection-start-column="16" selection-end-line="220" selection-end-column="16" />
-          <folding>
-            <element signature="e#39#50#0" expanded="true" />
-            <element signature="e#342#799#0" expanded="false" />
-            <element signature="e#3697#6283#0" expanded="false" />
-            <element signature="e#6706#6720#0" expanded="false" />
-            <marker date="1514913848174" expanded="true" signature="2247:2388" ph="INSERT INTO missing_value... " />
-            <marker date="1514913848174" expanded="true" signature="2845:2874" ph="DELETE FROM " />
-            <marker date="1514913848174" expanded="true" signature="3273:3360" ph="SELECT * FRO... users" />
-            <marker date="1514913848174" expanded="true" signature="4629:4668" ph="UPDATE users... " />
-            <marker date="1514913848174" expanded="true" signature="5194:5232" ph="UPDATE users... " />
-            <marker date="1514913848174" expanded="true" signature="5756:5792" ph="UPDATE users... " />
-            <marker date="1514913848174" expanded="true" signature="6457:6485" ph="SELECT * FRO... " />
-            <marker date="1514913848174" expanded="true" signature="6863:6972" ph="SELECT * FRO... missing_value" />
-            <marker date="1514913848174" expanded="true" signature="7847:7948" ph="SELECT * FRO... missing_value" />
-            <marker date="1514913848174" expanded="true" signature="9012:9081" ph="SELECT * FRO... missing_value" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/login.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1003">
@@ -1251,13 +1204,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app.py">
+    <entry file="file://$PROJECT_DIR$/templates/profile.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="439">
-          <caret line="29" column="0" lean-forward="false" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
-          <folding>
-            <element signature="e#1#22#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="272">
+          <caret line="16" column="7" lean-forward="true" selection-start-line="16" selection-start-column="7" selection-end-line="16" selection-end-column="7" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1281,26 +1232,90 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/profile.html">
+    <entry file="file://$PROJECT_DIR$/twitter_utils.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" column="7" lean-forward="true" selection-start-line="16" selection-start-column="7" selection-end-line="16" selection-end-column="7" />
+        <state relative-caret-position="371">
+          <caret line="28" column="0" lean-forward="true" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#31#0" expanded="true" />
+            <element signature="e#1065#1400#0" expanded="false" />
+            <element signature="e#1449#1543#0" expanded="false" />
+            <element signature="e#1602#2817#0" expanded="false" />
+            <element signature="e#2844#3241#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../../../../Python/projects/warriors_dbase/venv/Lib/site-packages/flask/helpers.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="607">
+          <caret line="185" column="4" lean-forward="false" selection-start-line="185" selection-start-column="4" selection-end-line="185" selection-end-column="4" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="439">
+          <caret line="35" column="32" lean-forward="true" selection-start-line="34" selection-start-column="8" selection-end-line="35" selection-end-column="32" />
+          <folding>
+            <element signature="e#1#22#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/home.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="14" lean-forward="false" selection-start-line="8" selection-start-column="14" selection-end-line="8" selection-end-column="24" />
+        <state relative-caret-position="204">
+          <caret line="12" column="60" lean-forward="false" selection-start-line="12" selection-start-column="60" selection-end-line="12" selection-end-column="60" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/search.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="13" column="7" lean-forward="true" selection-start-line="13" selection-start-column="7" selection-end-line="13" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/user.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="473">
+          <caret line="253" column="0" lean-forward="true" selection-start-line="253" selection-start-column="0" selection-end-line="253" selection-end-column="0" />
+          <folding>
+            <element signature="e#39#50#0" expanded="true" />
+            <element signature="e#342#799#0" expanded="false" />
+            <element signature="e#828#1414#0" expanded="false" />
+            <element signature="e#3697#6283#0" expanded="false" />
+            <element signature="e#6706#6720#0" expanded="false" />
+            <marker date="1514987174764" expanded="true" signature="2247:2388" ph="INSERT INTO missing_value... " />
+            <marker date="1514987174764" expanded="true" signature="2845:2874" ph="DELETE FROM " />
+            <marker date="1514987174764" expanded="true" signature="3273:3360" ph="SELECT * FRO... users" />
+            <marker date="1514987174764" expanded="true" signature="4629:4668" ph="UPDATE users... " />
+            <marker date="1514987174764" expanded="true" signature="5194:5232" ph="UPDATE users... " />
+            <marker date="1514987174764" expanded="true" signature="5756:5792" ph="UPDATE users... " />
+            <marker date="1514987174764" expanded="true" signature="6457:6485" ph="SELECT * FRO... " />
+            <marker date="1514987174764" expanded="true" signature="6863:6972" ph="SELECT * FRO... missing_value" />
+            <marker date="1514987174764" expanded="true" signature="7847:7948" ph="SELECT * FRO... missing_value" />
+            <marker date="1514987174764" expanded="true" signature="9012:9081" ph="SELECT * FRO... missing_value" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../../../../Python/projects/warriors_dbase/venv/Lib/site-packages/flask/app.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="1460" column="0" lean-forward="false" selection-start-line="1460" selection-start-column="0" selection-end-line="1460" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app-flask.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="58" column="0" lean-forward="true" selection-start-line="58" selection-start-column="0" selection-end-line="58" selection-end-column="0" />
+        <state relative-caret-position="528">
+          <caret line="70" column="0" lean-forward="true" selection-start-line="70" selection-start-column="0" selection-end-line="70" selection-end-column="0" />
           <folding>
             <element signature="e#13#93#0" expanded="true" />
           </folding>
