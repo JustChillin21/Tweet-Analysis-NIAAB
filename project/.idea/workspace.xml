@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="59657c1d-199c-4d6b-a5df-6b5a6f40fa32" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/templates/profile.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app-flask.py" afterPath="$PROJECT_DIR$/app-flask.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/home.html" afterPath="$PROJECT_DIR$/templates/home.html" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -100,7 +97,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="app-flask.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="app-flask.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app-flask.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="473">
@@ -112,7 +109,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="profile.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="profile.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/templates/profile.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="153">
@@ -607,7 +604,14 @@
       <option name="project" value="LOCAL" />
       <updated>1514913996051</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Section 10 Lesson 122 - Creating User Profile&#10;&#10;+profile.html &#10;    -created profile html file and passed variables to it using {{}}&#10;    -passed user name and user email&#10;profile()&#10;    -loads the user using session info incase we don't go via the login &#10;    route.&#10;    -if no user exists, redirects back to the /login/tritter page&#10;=have to modify the twitter utils file to return from website authentication. &#10;-should make an auto verification function in console version&#10;-need to clean up code">
+      <created>1514937931342</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1514937931342</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TodoView">
@@ -621,14 +625,13 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1066" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3290461" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3290461" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39764202" sideWeight="0.5042644" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3290461" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3290461" sideWeight="0.49791667" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3290461" sideWeight="0.49791667" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3290461" sideWeight="0.49791667" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3290461" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26865673" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32995737" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -679,7 +682,8 @@
     <MESSAGE value="+Modified the search module to correct for searching by email, or id&#10;+Modified  Menu.display_table_columns() to add a show=0 variable. &#10;show=0 (hide)&#10;show=1 (show column headers)&#10;This initializes the table before hand to avoid an error that I was getting after removing the column list&#10;Clean up some code and remove some commented code." />
     <MESSAGE value="Section 10 Lesson 120&#10;app_flask.py&#10;+added app.secret_key for the session['request_token']&#10;+added app.route('/login/twitter') &#10;    +session['request_token'] to story request token for return of user&#10;&#10;+returns redirection to the twitter authorization url using request token&#10;&#10;twitter_utils.py&#10;+get_oauth_verifier_url(request_token) &#10;    - return the address for the twitter verifier webpage.&#10;+get_oauth_verifier(request_token) &#10;    - modified to accept value from get_oauth_verifier_url()  &#10;user.py&#10;+tw_request &#10;    - cleaned up to accept different uri's" />
     <MESSAGE value="Section 10 Lesson 121 - Adding Twitter Authorization&#10;&#10;+modified the app-flask to auto authenticate and save to the database&#10;=have to modify the twitter utils file to return from website authentication. &#10;-should make an auto verification function&#10;-need to clean up code" />
-    <option name="LAST_COMMIT_MESSAGE" value="Section 10 Lesson 121 - Adding Twitter Authorization&#10;&#10;+modified the app-flask to auto authenticate and save to the database&#10;=have to modify the twitter utils file to return from website authentication. &#10;-should make an auto verification function&#10;-need to clean up code" />
+    <MESSAGE value="Section 10 Lesson 122 - Creating User Profile&#10;&#10;+profile.html &#10;    -created profile html file and passed variables to it using {{}}&#10;    -passed user name and user email&#10;profile()&#10;    -loads the user using session info incase we don't go via the login &#10;    route.&#10;    -if no user exists, redirects back to the /login/tritter page&#10;=have to modify the twitter utils file to return from website authentication. &#10;-should make an auto verification function in console version&#10;-need to clean up code" />
+    <option name="LAST_COMMIT_MESSAGE" value="Section 10 Lesson 122 - Creating User Profile&#10;&#10;+profile.html &#10;    -created profile html file and passed variables to it using {{}}&#10;    -passed user name and user email&#10;profile()&#10;    -loads the user using session info incase we don't go via the login &#10;    route.&#10;    -if no user exists, redirects back to the /login/tritter page&#10;=have to modify the twitter utils file to return from website authentication. &#10;-should make an auto verification function in console version&#10;-need to clean up code" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1219,14 +1223,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/profile.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="25" lean-forward="false" selection-start-line="9" selection-start-column="25" selection-end-line="9" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/login.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
@@ -1286,6 +1282,14 @@
           <folding>
             <element signature="e#13#90#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/profile.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="25" lean-forward="false" selection-start-line="9" selection-start-column="25" selection-end-line="9" selection-end-column="25" />
+          <folding />
         </state>
       </provider>
     </entry>
